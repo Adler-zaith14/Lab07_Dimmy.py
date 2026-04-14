@@ -1,0 +1,40 @@
+import openai
+import json
+import random
+
+client = openai.OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key="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"
+)
+
+temas = [
+    "Como funciona o Rigidbody e o sistema de física na Unity?",
+    "O que é o padrão Singleton e como implementar na Unity?",
+    "Como funciona o sistema de colisão e triggers na Unity?",
+    "O que são ScriptableObjects e quando devo usar?",
+    "Como criar um sistema de inventário com orientação a objetos na Unity?",
+    "Como aplicar o padrão Observer em jogos feitos na Unity?",
+    "Como funciona o NavMesh para movimentação de NPCs na Unity?",
+    "Como usar Object Pooling para otimizar performance na Unity?",
+    "Como implementar uma State Machine para controle de personagens?",
+    "Como funciona o Animator Controller e o sistema de animações na Unity?",
+]
+
+pares = []
+
+for tema in temas:
+    for _ in range(5):
+        res = client.chat.completions.create(
+            model="openai/gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Você é um professor especialista em desenvolvimento de jogos com Unity e engenharia de software. Responda de forma didática e técnica."},
+                {"role": "user", "content": tema}
+            ]
+        )
+        pares.append({
+            "prompt": tema,
+            "response": res.choices[0].message.content
+        })
+        print(f"gerado: {tema[:50]}...")
+
+print(f"\ntotal: {len(pares)} pares")
