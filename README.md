@@ -175,6 +175,22 @@ Partes geradas pela IA foi uso pra gerar as perguntas e respostas relacionada a 
 
 ---
 
+## Versionamento
+
+```
+
+%cd /content
+
+!git clone https://Adler-zaith14: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@github.com/Adler-zaith14/Lab07_Dimmy.py.git
+
+%cd Lab07_Dimmy.py
+
+!git config --global user.email "dimmy@gmail.com"
+!git config --global user.name "Dimmy"
+
+!git tag v1.0
+!git push origin v1.0
+```
 ## Anexo 
 
 **Google Colab:**
