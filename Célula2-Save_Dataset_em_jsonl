@@ -1,0 +1,15 @@
+random.shuffle(pares)
+
+corte = int(len(pares) * 0.9)
+treino = pares[:corte]
+teste = pares[corte:]
+
+with open("dataset_treino.jsonl", "w", encoding="utf-8") as f:
+    for item in treino:
+        f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+with open("dataset_teste.jsonl", "w", encoding="utf-8") as f:
+    for item in teste:
+        f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+print(f"treino: {len(treino)} | teste: {len(teste)}")
