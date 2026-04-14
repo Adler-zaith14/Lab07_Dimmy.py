@@ -1,5 +1,10 @@
 # Lab 07 – Fine-Tuning de LLM com LoRA e QLoRA
 
+**Instituição:** ICEV — Instituto de Ensino Superior  
+**Disciplina:** Tópicos em Inteligência Artificial  
+**Professor:** Dimmy Magalhães  
+**Autor:** Adler Castro Alves 
+
 ## Objetivo
 
 O objetivo deste laboratório foi realizar o fine-tuning de um modelo de linguagem utilizando técnicas de otimização que permitem treinar modelos grandes mesmo em ambientes com recursos limitados.
