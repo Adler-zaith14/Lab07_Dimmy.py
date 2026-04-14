@@ -1,0 +1,3 @@
+trainer.model.save_pretrained("./unity_lora_final")
+tokenizer.save_pretrained("./unity_lora_final")
+print("salvo!")
