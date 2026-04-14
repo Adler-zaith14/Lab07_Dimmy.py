@@ -1,0 +1,12 @@
+from peft import LoraConfig, get_peft_model, TaskType
+
+lora = LoraConfig(
+    task_type=TaskType.CAUSAL_LM,
+    r=64,
+    lora_alpha=16,
+    lora_dropout=0.1,
+    bias="none"
+)
+
+model = get_peft_model(model, lora)
+model.print_trainable_parameters()
